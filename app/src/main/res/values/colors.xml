@@ -1,5 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Colores base de CrediOpciones -->
+    <color name="credi_blue">#002663</color>
+    <color name="credi_red">#B30814</color>
+
+    <!-- Colores para la interfaz -->
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#757575</color>
+    <color name="bg_input">#F5F7FA</color>
 </resources>
