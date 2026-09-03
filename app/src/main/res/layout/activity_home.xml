@@ -1,176 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA">
+    android:fillViewport="true"
+    android:background="#F5F7FA"
+    android:fitsSystemWindows="true"> <!-- ESTO ARREGLA EL CORTE DE LA CÁMARA -->
 
-    <!-- Encabezado -->
-    <TextView
-        android:id="@+id/tvHeaderTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dashboard Chasis"
-        android:textColor="@color/credi_blue"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_margin="24dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!-- Módulo Principal: Consulta de Cliente -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardConsulta"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/tvHeaderTitle">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <!-- Encabezado -->
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dashboard Chasis"
+            android:textColor="@color/credi_blue"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_margin="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- Módulo Principal: Consulta -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardConsulta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tvHeaderTitle">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Consulta de Motocicletas por Cliente"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary"
-                android:layout_marginBottom="16dp"/>
-
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Código de Cliente"
-                app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopStart="12dp"
-                app:boxCornerRadiusTopEnd="12dp"
-                app:boxCornerRadiusBottomStart="12dp"
-                app:boxCornerRadiusBottomEnd="12dp"
-                app:startIconDrawable="@android:drawable/ic_menu_search">
+                android:orientation="vertical"
+                android:padding="20dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etCodigoCliente"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consulta de Motocicletas por Cliente"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:hint="Código de Cliente"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:startIconDrawable="@android:drawable/ic_menu_search">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnConsultar"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:text="Consultar Historial"
-                app:cornerRadius="12dp"
-                android:backgroundTint="@color/credi_blue"/>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCodigoCliente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Tarjeta de Resultados (Oculta por defecto) -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardResultados"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="12dp"
-        app:cardBackgroundColor="@color/credi_blue"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/cardConsulta">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnConsultar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Consultar Historial"
+                    app:cornerRadius="12dp"
+                    android:backgroundTint="@color/credi_blue"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <LinearLayout
+        <!-- Tarjeta de Resultados con Contenedor de Motos -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardResultados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- Mostrará solo los datos del cliente, aislado de otros campos -->
-            <TextView
-                android:id="@+id/tvNombreCliente"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cliente: ---"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/tvTotalMotos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Total de compras: 0"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp"/>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <!-- Sección de Escalabilidad (Próximos Módulos) -->
-    <TextView
-        android:id="@+id/tvModulos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Módulos Adicionales"
-        android:textColor="@color/text_secondary"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/cardResultados"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="12dp"
-        android:columnCount="2"
-        android:rowCount="1"
-        app:layout_constraintTop_toBottomOf="@id/tvModulos">
-
-        <!-- Módulo Futuro 1 -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
             app:cardCornerRadius="12dp"
-            app:cardBackgroundColor="#E0E0E0"
-            app:cardElevation="0dp">
-            <TextView
-                android:layout_width="wrap_content"
+            app:cardBackgroundColor="@color/credi_blue"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/cardConsulta">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="+ Próximamente"
-                android:textColor="#9E9E9E"/>
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvNombreCliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvTotalMotos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Contenedor donde inyectaremos cada moto -->
+                <LinearLayout
+                    android:id="@+id/llMotosContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Módulo Futuro 2 -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            app:cardCornerRadius="12dp"
-            app:cardBackgroundColor="#E0E0E0"
-            app:cardElevation="0dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="+ Próximamente"
-                android:textColor="#9E9E9E"/>
-        </com.google.android.material.card.MaterialCardView>
+        <!-- Módulos Adicionales (Próximamente) -->
+        <TextView
+            android:id="@+id/tvModulos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Módulos Adicionales"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/cardResultados"
+            app:layout_constraintStart_toStartOf="parent"/>
 
-    </GridLayout>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="32dp"
+            android:columnCount="2"
+            android:rowCount="1"
+            app:layout_constraintTop_toBottomOf="@id/tvModulos">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#E0E0E0"
+                app:cardElevation="0dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+ Próximamente"
+                    android:textColor="#9E9E9E"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#E0E0E0"
+                app:cardElevation="0dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+ Próximamente"
+                    android:textColor="#9E9E9E"/>
+            </com.google.android.material.card.MaterialCardView>
+        </GridLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
